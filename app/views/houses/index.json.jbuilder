@@ -8,6 +8,6 @@ json.features(@houses.map do |house|
                   price: house.price },
     geometry: {
       type: "Point",
-      coordinates: [ house.latitude, house.longitude ] }
+      coordinates: [ house.longitude, house.latitude ] }
   }
 end)
