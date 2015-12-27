@@ -1,4 +1,13 @@
-json.array!(@houses) do |house|
-  json.extract! house, :id, :address, :references, :description, :price
-  json.url house_url(house, format: :json)
-end
+json.type "FeatureCollection"
+json.features(@houses.map do |house|
+  { type: 'Feature',
+    properties: { id: house.id ,
+                  address: house.address,
+                  references: house.references,
+                  description: house.description,
+                  price: house.price },
+    geometry: {
+      type: "Point",
+      coordinates: [ house.latitude, house.longitude ] }
+  }
+end)
