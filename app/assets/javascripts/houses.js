@@ -12,11 +12,20 @@ $(function () {
   req.onload = function() {
     L.geoJson(JSON.parse(this.responseText), {
       pointToLayer: function(feature, latlng) {
-        return L.marker(latlng);
-          // .bindPopup(buildPopup(feature));
+        return L.marker(latlng)
+          .bindPopup(buildPopup(feature));
       }
     }).addTo(map);
   }
+
   req.open("get", "houses.json");
   req.send();
+
+  function buildPopup (feature) {
+    var data = feature.properties;
+    return '<h3>' + data.address + '</h3>' +
+      '<p>' + data.description + '</p>' +
+      '<p>' + data.references + '</p>' +
+      '<a href="' + data.edit + '">' + 'Edit</a>'
+  }
 });

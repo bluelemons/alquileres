@@ -1,36 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<div id="map">
-</div>
-
 <h1>Listing Houses</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>References</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @houses.each do |house| %>
-      <tr>
-        <td><%= house.address %></td>
-        <td><%= house.references %></td>
-        <td><%= house.description %></td>
-        <td><%= house.price %></td>
-        <td><%= link_to 'Show', house %></td>
-        <td><%= link_to 'Edit', edit_house_path(house) %></td>
-        <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div id="map">
+</div>
 
 <%= link_to 'New House', new_house_path %>

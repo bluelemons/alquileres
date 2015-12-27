@@ -2,7 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
 #map {
-  height: 300px;
-  width: 300px;
+  margin: auto;
+  height: 90%;
+  width: 90%;
 }
