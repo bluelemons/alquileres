@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20151227203933) do
 
   create_table "houses", force: :cascade do |t|
     t.string   "address"
-    t.string   "references"
+    t.text     "references"
     t.text     "description"
     t.integer  "price"
     t.datetime "created_at",  null: false
