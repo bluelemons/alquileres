@@ -24,7 +24,7 @@ $(function () {
   function buildPopup (feature) {
     var data = feature.properties;
     return '<h3>' + data.address + '</h3>' +
-      '<p>' + data.description + '</p>' +
+      '<p><strong>$ '+ data.price + '</strong> ' + data.description + '</p>' +
       '<p>' + data.references + '</p>' +
       '<a href="' + data.edit + '">' + 'Edit</a>'
   }
